@@ -14,6 +14,37 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+### `npm install react-router-dom`
+
+The above command will install package called react-router-dom to set up single page application(SPA) & navigate between pages
+
+### `npm install @emotion/react @emotion/styled @mui/icons-material @mui/material`
+
+The above command install required packages to use materialUI icons
+
+### `npm install react-loader-spinner`
+
+The above command will install loader spinner to display loader
+
+## Project Overview
+
+The project is a React-based e-commerce application designed to showcase products, allow users to browse, add items to their cart, and view product details. It consists of multiple components such as Navbar, Home, Cart, ProductDetails, and FilterProducts.
+
+- Navbar: Provides navigation links for users to move between different sections of the application, including the home page and the shopping cart.
+- Home: Displays a list of products fetched from a dummy API endpoint. It includes a loading spinner while fetching data and a filter feature to narrow down products based on brand and category.
+
+- Cart: Allows users to view items added to their shopping cart. It provides functionality to remove items, calculates the subtotal, applies discounts, and displays the total price for checkout.
+
+- ProductDetails: Shows detailed information about a specific product selected by the user. It includes the product image, title, brand, description, price, and rating. Users can add the product to their cart from this page.
+
+- FilterProducts: A reusable component used on the home page to filter products based on brand and category. It dynamically updates the product list based on user selections.
+
+The application also utilizes React Router for navigation and manages cart state using a Context API. It incorporates Material-UI icons for visual elements and styling is done using CSS modules.
+
+Overall, the project aims to provide a seamless shopping experience for users with intuitive navigation, detailed product information, and efficient cart management functionalities.
+
+<!--
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
@@ -68,3 +99,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ -->

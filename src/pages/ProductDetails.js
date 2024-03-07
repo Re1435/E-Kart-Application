@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { BallTriangle } from "react-loader-spinner";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import { useCart } from "../context/CartContext";
+import axios from "axios";
 import "../styles/ProductDetails.css";
 
 const ProductDetails = () => {
@@ -14,14 +15,11 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProductApi = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get(
           `https://dummyjson.com/products/${productId.id}`
         );
-        if (!response.ok) {
-          throw new Error("Failed to fetch product");
-        }
-        const responseData = await response.json();
-        setProduct(responseData);
+
+        setProduct(response.data);
         setLoading(false);
       } catch (error) {
         console.log("Error fetching data:", error.message);

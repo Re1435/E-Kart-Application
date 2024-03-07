@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FilterProducts from "../components/FilterProducts";
 import { BallTriangle } from "react-loader-spinner";
+import axios from "axios";
 import "../styles/Home.css";
 const API_URL = "https://dummyjson.com/products";
 
@@ -11,12 +12,9 @@ const Home = () => {
   const fetchApiData = async (URL) => {
     setLoading(true);
     try {
-      const response = await fetch(URL);
-      if (!response.ok) {
-        throw new Error("Failed to fatch data");
-      }
-      const responseData = await response.json();
-      setData(responseData.products);
+      const response = await axios.get(URL);
+
+      setData(response.data.products);
       setLoading(false);
     } catch (error) {
       console.log("Error message", error.message);
